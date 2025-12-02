@@ -21,10 +21,10 @@ fn part1(ranges: &Vec<(u64, u64)>) {
         // Invalid ids cant have an odd number of digits
         // => skip blocks of powers of 10, if number has odd digits number
         while low <= high {
-            let digits = low.ilog10();
-            let block_end = 10_u64.pow(digits + 1) - 1;
+            let magnitude = low.ilog10();
+            let block_end = 10_u64.pow(magnitude + 1) - 1;
 
-            if digits % 2 == 0 {
+            if magnitude % 2 == 0 {
                 low = block_end + 1;
                 continue;
             }
