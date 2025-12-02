@@ -4,11 +4,9 @@ pub fn day_2() {
     let ranges: Vec<(u64, u64)> = input.split(",").map(|range| {
         if range.is_empty() { return (0, 0); }
 
-        let [ low, high ] = range.trim().split("-").collect::<Vec<&str>>()[..] else {
-            panic!("invalid range");
-        };
-
-        (low.parse::<u64>().unwrap(), high.parse::<u64>().unwrap())
+        range.trim()
+            .split_once('-')
+            .map(|x| (x.0.parse().unwrap(), x.1.parse().unwrap())).unwrap()
     }).collect();
 
     part1(&ranges);
@@ -66,7 +64,7 @@ fn part2_is_invalid(n: u64) -> bool {
     let digits = s.len();
 
     for block_size in 1..=digits/2 {
-        if digits % block_size != 0 { continue; }
+        if !digits.is_multiple_of(block_size) { continue; }
 
         let blocks = digits / block_size;
         let block = &s[0..block_size];
