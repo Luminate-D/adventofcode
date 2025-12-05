@@ -26,7 +26,7 @@ fn part1(numbers: Vec<u64>, ranges: &[Interval]) {
         if is_in_ranges(number, &ranges) { fresh += 1; }
     }
 
-    println!("[Day 4] Part 1: {}", fresh);
+    println!("[Day 5] Part 1: {}", fresh);
 }
 
 fn part2(ranges: &[Interval]) {
@@ -36,7 +36,7 @@ fn part2(ranges: &[Interval]) {
         total_fresh += range.1 - range.0 + 1;
     }
 
-    println!("[Day 4] Part 2: {}", total_fresh);
+    println!("[Day 5] Part 2: {}", total_fresh);
 }
 
 fn is_in_ranges(number: u64, ranges: &[Interval]) -> bool {
