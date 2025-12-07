@@ -40,11 +40,11 @@ pub fn part1(input: &str) {
 }
 
 // Idea almost the same
-// Track beams AND timelines
-// begin with 1 timeline and 1 beam
-// when beam meets splitter - each of new beams clones the timeline (each of new beams has same number of timelines leading there)
-// when beams overlap - each beam timelines are summed (cuz new beam has all timelines that lead to it)
-// at the end - count timelines on the last row
+// Track (beam, timelines that have lead to that beam)
+// begin with 1 timeline and 1 beam (S)
+// when beam meets splitter - each of new beams clones timelines count from splitted beam
+// when beams overlap - each beam timelines are summed (timelines from both beams lead to the same new beam position)
+// at the end - sum how many timelines have lead to each position on the last row
 pub fn part2(input: &str) {
     let mut lines = input.lines();
     let mut timelines: HashMap<usize, usize> = HashMap::new();
