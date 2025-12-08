@@ -6,6 +6,7 @@ use crate::day_4::day_4;
 use crate::day_5::day_5;
 use crate::day_6::day_6;
 use crate::day_7::day_7;
+use crate::day_8::day_8;
 
 mod day_1;
 mod day_2;
@@ -14,6 +15,7 @@ mod day_4;
 mod day_5;
 mod day_6;
 mod day_7;
+mod day_8;
 
 fn main() {
     println!("Hello, baka!");
@@ -25,7 +27,8 @@ fn main() {
     // day_4();
     // day_5();
     // day_6();
-    day_7();
+    // day_7();
+    day_8();
 
     let elapsed = now.elapsed();
 
